@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page</title>
+</head>
+<style>
+    body{
+        color: lightseagreen;
+        background-image: url(pic.jpeg);
+    }
+</style>
+<body>
+    <img src="https://avatars.githubusercontent.com/u/209244745?v=4&size=64" alt="" width="50">
+    <h1>Hello</h1>
+    <hr>
+    <form onsubmit="event.preventDefault(); displayValue();">
+        <label for="search"></label>
+        <input type="text" id="name" name="name">
+        <input type="submit" value="Submit">
+    </form>
+    <hr>
+
+    <button onclick="helloworld()">start hello world</button>
+    <hr>
+    <h1>weblinks</h1>
+    <a href="https://www.wikipedia.org/" style="color: aqua;"><h1>wikipedia</h1></a>
+    <hr>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/U2Fjfqm-7g8?si=4YUlas-lmgWAzEHg&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
+    
+</body>
+<script>
+    function displayValue() {
+            const name = document.getElementById('name').value;
+            window.open ("https://www.google.com/search?q=" + name)
+        }
+    function helloworld () {
+        alert ("Hello World !")
+        var name = prompt ("What's your name ?")
+        alert ("Hello " + name +  " !")
+    }
+
+</script>
+</html>
