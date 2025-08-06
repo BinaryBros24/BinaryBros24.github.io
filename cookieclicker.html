@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker by the Binary Bros 24</title>
+</head>
+<style>
+    html {
+        background-color: black;
+        color: aqua;
+        font-family: sans-serif;
+    }
+    img {
+        width: 150px;
+        cursor: pointer;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #2c2c2c;
+        color: aqua;
+        border: 2px solid aqua;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:disabled {
+        background-color: #555;
+        color: #999;
+        cursor: not-allowed;
+    }
+</style>
+<body>
+    <h1>Cookies:</h1>
+    <h1 id="click">0</h1>
+    <p>Cookies per Click: <span id="per-click">1</span></p>
+    <hr>
+    <button onclick="addone()"><img src="cookie.png" alt="cookie"></button>
+    <hr>
+    <h1>Appstore</h1>
+    <hr>
+    <h2>Grandma 👵🏽</h2>
+    <h3>Gives you two cookies per click</h3>
+    <button id="buyoma">Buy (200 Cookies)</button>
+    <hr>
+    <h2>Autoclicker 🤖</h2>
+    <h3>Adds 10,000 cookies per click</h3>
+    <button id="buyauto">Buy (15,000 Cookies)</button>
+</body>
+
+<script>
+    let clicks = 0;
+    let adder = 1;
+
+    function addone() {
+        clicks += adder;
+        updateDisplay();
+    }
+
+    // Function to update the display in one place
+    function updateDisplay() {
+        document.getElementById("click").innerText = clicks;
+        document.getElementById("per-click").innerText = adder;
+    }
+
+    document.getElementById("buyoma").addEventListener("click", function() {
+        if (clicks >= 200) {
+            this.disabled = true;
+            this.textContent = "Bought";
+            adder += 2;
+            clicks -= 200;
+            updateDisplay();
+        } else {
+            alert("Not enough cookies!");
+        }
+    });
+
+    document.getElementById("buyauto").addEventListener("click", function() {
+        if (clicks >= 15000) {
+            this.disabled = true;
+            this.textContent = "Bought";
+            // The autoclicker now adds 10,000 to the 'adder' variable
+            adder += 10000;
+            clicks -= 15000;
+            updateDisplay();
+        } else {
+            alert("Not enough cookies!");
+        }
+    });
+</script>
+</html>
