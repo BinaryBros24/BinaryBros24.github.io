@@ -43,9 +43,16 @@
     <h3>Gives you two cookies per click</h3>
     <button id="buyoma">Buy (200 Cookies)</button>
     <hr>
+    <hr>
+    <h2>bakery 🥐</h2>
+    <h3>Gives you 45 cookies per click</h3>
+    <button id="buybak">Buy (1000 Cookies)</button>
+    <hr>
     <h2>Autoclicker 🤖</h2>
     <h3>Adds 10,000 cookies per click</h3>
     <button id="buyauto">Buy (15,000 Cookies)</button>
+    <hr>
+    
 </body>
 
 <script>
@@ -67,8 +74,20 @@
         if (clicks >= 200) {
             this.disabled = true;
             this.textContent = "Bought";
-            adder += 2;
+            adder = 2;
             clicks -= 200;
+            updateDisplay();
+        } else {
+            alert("Not enough cookies!");
+        }
+    });
+
+    document.getElementById("buybak").addEventListener("click", function() {
+        if (clicks >= 1000) {
+            this.disabled = true;
+            this.textContent = "Bought";
+            adder = 45;
+            clicks -= 1000;
             updateDisplay();
         } else {
             alert("Not enough cookies!");
@@ -80,7 +99,7 @@
             this.disabled = true;
             this.textContent = "Bought";
             // The autoclicker now adds 10,000 to the 'adder' variable
-            adder += 10000;
+            adder = 10000;
             clicks -= 15000;
             updateDisplay();
         } else {
