@@ -66,6 +66,11 @@
     function addone() {
         clicks += adder;
         updateDisplay();
+        if (clicks == 2000000) {
+            alert ("🏆🏆🏆🥇🥇🥇🥇 Du hast gewonnen !!!!! 🏆🏆🏆🥇🥇🥇🥇");
+            var name = prompt ("Wie heißt du Cookie-Meister ?");
+            alert ("Gut gemacht, " + name);
+        }
     }
 
     // Function to update the display in one place
